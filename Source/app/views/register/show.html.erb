@@ -1,0 +1,33 @@
+<section class="about">
+		<% if !@error %>
+			<h1>
+				<%= "Thanks for Your Registration!" %>
+			</h1>
+<!--
+			<p>
+				Name: <%=  @register_data.name %>
+			</p>
+			<p>
+				Year: <%=  @register_data.year %>
+			</p>
+			<p>
+				Major: <%=  @register_data.major %>
+			</p>
+			<p>
+				Mobile: <%=  @register_data.mobile %>
+			</p>
+			<p>
+				Email: <%=  @register_data.email %>
+			</p>
+-->
+
+		<% else %>
+			<h1><%= "Oops! Nothing Around Here"%></h1>
+		<% end %>
+		<div style="height:10px"></div>
+		<a href="http://oss.lzu.edu.cn">Visit: http://oss.lzu.edu.cn</a>
+		<div style="height:10px"></div>
+		<div class="about-author">
+			Copyright 2013 LZUOSS All right reserved. by PJW 
+		</div>
+</section>

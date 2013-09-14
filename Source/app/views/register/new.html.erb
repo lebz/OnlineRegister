@@ -1,0 +1,63 @@
+<script>
+$(document).ready(function(){
+    var doc=document,inputs=doc.getElementsByTagName('input'),supportPlaceholder='placeholder'in doc.createElement('input'),placeholder=function(input){
+  	  var text=input.getAttribute('placeholder'),defaultValue=input.defaultValue;
+	    if(defaultValue==''){
+        input.value=text
+			}
+	    input.onfocus=function(){
+        if(input.value===text){this.value=''}
+			};
+    	input.onblur=function(){
+    		if(input.value===''){this.value=text}
+			}
+		};
+    if(!supportPlaceholder){
+        for(var i=0,len=inputs.length;i<len;i++){
+        	var input=inputs[i],text=input.getAttribute('placeholder');
+					if(input.type==='text'&&text){placeholder(input)}
+				}
+		}
+});
+</script>
+<%= form_for :register, :url => 'create' do %>
+<section class="container">
+	<div class="register">
+		<h1>LZUOSS 2013 Online Register</h1>
+		
+
+		<p>
+			<input id="register_name" name="register[name]" type="text" placeholder="Name"/>
+		</p>
+		
+		<p>
+			<input id="register_year" name="register[year]" type="text" placeholder="Enrollment Year"/>
+		</p>
+		
+		<p>
+			<input id="register_major" name="register[major]" type="text" placeholder="Major In"/>
+		</p>
+		
+		<p>
+			<input id="register_mobile" name="register[mobile]" type="text" placeholder="Mobile Number"/>
+		</p>
+		
+		<p>
+			<input id="register_email" name="register[email]" type="text" placeholder="Email Address"/>
+		</p>
+		
+		<% if @error %>
+			<p class="remember_me">
+				Fill in all Blanks and retry.
+			</p>
+		<% end %>
+			<p class="submit">
+				<input name="commit" type="submit" value="Register" />
+			</p>
+			
+			<div style="font-size:10px; padding-top: 20px; margin-bottom: -10px; text-align:center; color:#666">
+				Copyright 2013 LZUOSS All right reserved. by PJW
+			</div>
+	</div>
+</section>
+<% end %>

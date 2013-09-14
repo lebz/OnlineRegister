@@ -1,0 +1,22 @@
+<section class="list">
+	<table>
+		<tr>
+			<th width="90" height="35px"> Name </th>
+			<th width="90" height="35px"> Year </th>
+			<th width="120" height="35px"> Major </th>
+			<th width="150" height="35px"> Mobile </th>
+			<th width="250" height="35px"> Email </th>
+			<th width="60" height="35px"> Delete </th>
+		</tr>
+		<% @all_regiter.each do |single| %>
+		<tr>
+			<td height="30px"><%= single.name %></td>
+			<td height="30px"><%= single.year %></td>
+			<td height="30px"><%= single.major %></td>
+			<td height="30px"><%= single.mobile %></td>
+			<td height="30px"><%= single.email %></td>
+			<td height="30px"><a href="destorythespammessage?id=<%= single.id %>">X</a></td>
+		</tr>
+		<% end %>
+	</table>
+</section>
